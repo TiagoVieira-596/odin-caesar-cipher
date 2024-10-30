@@ -18,5 +18,19 @@ def caesar_cipher(word, shift_factor)
     letter_code
   end
   ciphered_message = ciphered_message_codes.map {|code| code.chr}.join
-  ciphered_message
+  p ciphered_message
 end
+
+word = ""
+until word != "" and word.ascii_only? and word.upcase != word.downcase
+  puts "Word:"
+  word = gets.chomp
+end
+
+shift = ""
+until shift != "" and shift.ord in (48..57) and shift.to_i.is_a? Numeric
+  puts "shift:"
+  shift = gets.chomp
+end
+
+caesar_cipher(word, shift.to_i)
