@@ -3,7 +3,7 @@ def caesar_cipher(word, shift_factor)
   ciphered_message_codes = letter_codes_array.map do |letter_code|
     i = 0
     if letter_code.chr.upcase != letter_code.chr.downcase
-      while i < shift_factor 
+      while i < shift_factor
         if letter_code == "z".ord
           letter_code = "a".ord
           letter_code -= 1
