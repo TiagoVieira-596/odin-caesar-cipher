@@ -17,20 +17,5 @@ def caesar_cipher(word, shift_factor)
     end
     letter_code
   end
-  ciphered_message = ciphered_message_codes.map(&:chr).join
-  p ciphered_message
+  ciphered_message_codes.map(&:chr).join
 end
-
-word = ''
-until word != '' && word.ascii_only? && word.upcase != word.downcase
-  puts 'Word:'
-  word = gets.chomp
-end
-
-shift = ''
-until shift != '' && (shift.ord in (48..57)) && (shift.to_i.is_a? Numeric)
-  puts 'shift:'
-  shift = gets.chomp
-end
-
-caesar_cipher(word, shift.to_i)
